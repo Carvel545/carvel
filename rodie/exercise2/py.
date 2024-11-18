@@ -1,0 +1,10 @@
+x = int(inpunt("Значение х : 10 "))
+t = int(input("Значение т : 1 "))
+
+Числитель = 9 * math.pi * t + 10 * math.cox(x)
+Знаменатель = math.sqrt(t) - abs(math.sin(t))
+Фракция = числитель / знаменатель
+
+z = фракция * math.power(math.e, x)
+
+print(f"результат Z: {z:.2f} ") 
