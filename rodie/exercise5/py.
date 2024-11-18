@@ -1,0 +1,12 @@
+day = 1
+current_run = x
+while current_run < u :
+        cuurent_run *= 1.10 
+# Увеличение пробега на 10%
+            day +=1
+          return day 
+x = float(input("Введите начальный пробег (x): "))
+u = float(input("Введите целевой пробег (u): "))
+
+day =find_day(x,u)
+print("номер дня :", day )
