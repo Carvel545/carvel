@@ -1,0 +1,9 @@
+input_str = "Пример строки с буквами а "
+old_char = "a"
+new_char ="o"
+
+new_str, remplacements, total_chars = replace_and_count(input_str,old,new_char)
+
+print(f"Новая строка : {new_str}")
+print(f"Количество замен : {remplacements}")
+print(f"Общее количество символов : {total_chars}")
