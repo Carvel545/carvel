@@ -1,0 +1,51 @@
+import math
+
+### Функция для нахождения НОД по алгоритму Евклида
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+### Функция для деления дробей и сокращения результата
+def divide_fractions(numerator1, denominator1, numerator2, denominator2):
+    # Деление дробей
+    result_numerator = numerator1 * denominator2
+    result_denominator = denominator1 * numerator2
+    
+    # Находим НОД для сокращения дроби
+    common_divisor = gcd(result_numerator, result_denominator)
+    
+    # Сокращаем дробь
+    result_numerator //= common_divisor
+    result_denominator //= common_divisor
+    
+    return result_numerator, result_denominator
+
+### Функция для проверки, лежит ли точка внутри окружности
+def is_point_inside_circle(center_x, center_y, radius, point_x, point_y):
+    distance = math.sqrt((point_x - center_x)  2 + (point_y - center_y)  2)
+    return distance < radius
+
+### Основная программа
+def main():
+    # Деление дробей
+    A, B = map(int, input("Введите числитель и знаменатель первой дроби через пробел: ").split())
+    C, D = map(int, input("Введите числитель и знаменатель второй дроби через пробел: ").split())
+    
+    result_numerator, result_denominator = divide_fractions(A, B, C, D)
+    print(f"Результат деления дробей: {result_numerator}/{result_denominator}")
+    
+    # Проверка точек внутри окружности
+    center_x, center_y, radius = map(float, input("Введите координаты центра и радиус окружности через пробел: ").split())
+    points = int(input("Введите количество точек: "))
+    
+    points_inside = 0
+    for _ in range(points):
+        point_x, point_y = map(float, input("Введите координаты точки через пробел: ").split())
+        if is_point_inside_circle(center_x, center_y, radius, point_x, point_y):
+            points_inside += 1
+    
+    print(f"Количество точек внутри окружности: {points_inside}")
+
+if name == "__main__":
+    main()
