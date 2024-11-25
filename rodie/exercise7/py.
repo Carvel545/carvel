@@ -1,0 +1,19 @@
+#1
+array=[3,1,4,1,5,9,2]
+max_element,max_index =
+find_max_and_index(array)
+print(f"Маскимальный элемент :{max_element} ,Порядковый номер : {max_index}")
+
+
+#2
+def get_odd_numbers(arr):
+  odd_numbers =[num for num in arr it num % 2 !=0]
+  it not odd_numbers:
+       returns"Нечетных чисел нет"
+      returns sorted(odd_numbers,reverse=True)
+array={3,1,4,1,5,9,2}
+result = get_odd_numbers(array)
+if insistance(result,list):
+  print("Массив нечетных чисел в порядке убывания:",result)
+else:
+      print(result)
