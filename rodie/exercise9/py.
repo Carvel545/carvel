@@ -1,0 +1,58 @@
+def find_max_min_sum_rows(matrix):
+    # Инициализация переменных для хранения результатов
+    max_sum = float('-inf')
+    min_sum = float('inf')
+    max_row = None
+    min_row = None
+
+    # Итерация по строкам матрицы
+    for i, row in enumerate(matrix):
+        # Вычисление суммы элементов текущей строки
+        row_sum = sum(row)
+        
+        # Обновление максимальной суммы и соответствующей строки
+        if row_sum > max_sum:
+            max_sum = row_sum
+            max_row = row
+        
+        # Обновление минимальной суммы и соответствующей строки
+        if row_sum < min_sum:
+            min_sum = row_sum
+            min_row = row
+
+    # Вывод результатов
+    print("Строка с наибольшей суммой элементов:", max_row)
+    print("Сумма элементов этой строки:", max_sum)
+    print("Строка с наименьшей суммой элементов:", min_row)
+    print("Сумма элементов этой строки:", min_sum)
+
+# Пример использования
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+find_max_min_sum_rows(matrix)
+
+#2
+def replace_and_print_lower_triangle(matrix):
+    # Замена отрицательных элементов на нули и положительных на единицы
+    replaced_matrix = [[1 if elem > 0 else 0 if elem == 0 else 0 for elem in row] for row in matrix]
+
+    # Вывод нижней треугольной матрицы
+    n = len(matrix)
+    for i in range(n):
+        for j in range(n):
+            if j <= i:
+                print(replaced_matrix[i][j], end=' ')
+            else:
+                print(0, end=' ')
+        print()
+
+# Пример использования
+matrix = 
+    [-1, 2, 3],
+    [4, -5, 6],
+    [7, 8, -9]  
+  
+replace_and_print_lower_triangle(matrix)
